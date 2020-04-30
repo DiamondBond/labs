@@ -1,0 +1,29 @@
+Define a class named MyPoint to represent points in the plane or, if you prefer, on a map.
+More precisely, an object of type MyPoint corresponds to a point in the two-dimensional
+plane.
+Recall that each point in the plane can be specified by it's x-axis and y-axis coordinates.
+
+The MyPoint class contains the following:
+- A private data field named x that defines the x-axis coordinate. You can assume that the
+  x-coordinate is non-negative.
+- A private data field named y that defines the y-axis coordinate. You can assu,e that the
+  y-coordinate is non-negative.
+- A constructor/initializer that creates a point with the specified x-axis coordinate and
+  y-axis coordinate or creates a point with default values (x=0, y=0)
+- A __str__ method that returns a string representation of the object formatted as in the
+  examples below.
+
+For example:
+==============================
+r = MyPoint(3, 4)   || (3, 4)
+print(r)	    ||
+==============================
+r = MyPoint()	    || (0, 0)
+print(r)	    ||
+==============================
+r = MyPoint(1)	    || (1, 0)
+print(r)	    ||
+==============================
+r = MyPoint(y = 10) || (0, 10)
+print(r)	    ||
+==============================

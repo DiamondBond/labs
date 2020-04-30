@@ -1,0 +1,23 @@
+Define a class named MyLine by using the MyPoint class. A line is composed of two points. The MyLine class contains the following:
+- A private data field named start_point of type MyPoint that defines the start point.
+- A private data field named end_point of type MyPoint that defines the end point.
+- A constructor/initializer which takes 4 integers as parameters (x1, y1, x2, y2) and creates a line with two MyPoint objects. The default value for each coordinate is 0.
+- The __str__ method which returns a string representation of the object as in the examples below.
+
+For example:
+=======================================================
+line1 = MyLine(10, 20, 20, 30)	|| (10, 20) to (20, 30)
+print(line1)			||
+=======================================================
+line1 = MyLine()		|| (0, 0) to (0, 0)
+print(line1)			||
+=======================================================
+line1 = MyLine(10)		|| (10, 0) to (0, 0)
+print(line1)			||
+=======================================================
+line1 = MyLine(x2=20, y1=30)	|| (0, 30) to (20, 0)
+print(line1)			||
+=======================================================
+line1 = MyLine(x1=20, y1=30)	|| (20, 30) to (0, 0)
+print(line1)			||
+=======================================================

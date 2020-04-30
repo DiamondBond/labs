@@ -1,0 +1,27 @@
+Continuing on from the previous question, add the following methods to the MyPoint class:
+- the get_x(self) method which returns the x-coordinate of a MyPoint object.
+- the get_y(self) method which returns the y-coordinate of a MyPoint object.
+- the set_x(self, x) method which sets the x-coordinate of a MyPoint object. The method only
+  modifies the value if the parameter value is non-negative.
+- the set_y(self, y) method which sets the y-coordinate of a MyPoint object. The method only
+  modifies the value if the parameter value is non-negative.
+
+For example:
+=============================================
+r = MyPoint(3, 4)		|| (3, 4)
+print(r)			|| 3 4
+print(r.get_x(), r.get_y())	||
+=============================================
+r = MyPoint()			|| 0 0
+print(r.get_x(), r.get_y())	|| 
+=============================================
+r = MyPoint()			|| (100, 200)
+r.set_x(100)			||
+r.set_y(200)			||
+print(r)			||
+=============================================
+r = MyPoint(10, 20)		|| (10, 20)
+r.set_x(-100)			||
+r.set_y(-50)			||
+print(r)			||
+=============================================

@@ -1,0 +1,31 @@
+Continuing on from the previous question, add the following methods to the MyPoint class:
+- the get_distance(self, other_point) method which takes another MyPoint object as a parameter
+  and returns the distance to that point. Distance between two points P(x1, y1) and Q(x2, y2) is given by: distance = sqrt[ (x2 - x1)^2 + (y2 - y1)^2 ]
+- the is_near_by(self, other_point) method which returns True if the MyPoint is close to this
+  point, False otherwise. Two points are close if their distance is less than 5.0.
+
+For example:
+============================================================================================================================
+p = MyPoint(10,20)								|| The distance between two points is 28.28.
+r = MyPoint(30,40)								||
+print("The distance between two points is {:.2f}.".format(p.get_distance(r)))	||
+============================================================================================================================
+p = MyPoint()									|| The distance between two points is 5.00.
+r = MyPoint(3,4)								|| 
+print("The distance between two points is {:.2f}.".format(p.get_distance(r)))	||
+============================================================================================================================
+p = MyPoint(2, 2)								|| The distance between two points is 24.04.
+r = MyPoint(19, 19)								|| False
+print("The distance between two points is {:.2f}.".format(p.get_distance(r)))	||
+print(p.is_near_by(r))								||
+============================================================================================================================
+p = MyPoint(2, 2)								|| The distance between two points is 2.24.
+r = MyPoint(3, 4)								|| True
+print("The distance between two points is {:.2f}.".format(p.get_distance(r)))	||
+print(p.is_near_by(r))								||
+============================================================================================================================
+p = MyPoint()									|| The distance between two points is 5.00.
+r = MyPoint(3,4)								|| False
+print("The distance between two points is {:.2f}.".format(p.get_distance(r)))	||
+print(p.is_near_by(r))								||
+============================================================================================================================
