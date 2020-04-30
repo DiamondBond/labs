@@ -1,4 +1,0 @@
-q4:
-not sure if __init__ within MyLine should have
-start_point = [x1, y1]
-end_point = [x2, y2]
