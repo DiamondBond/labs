@@ -150,8 +150,35 @@ class MyCircle(MyPoint):
         return distance
 
 class MyMultiLine(MyPoint):
-    def __init__(self, x=0, y=0):
-        self.__x = x
-        self.__y = y
-        #self.__points = []
-        self.__points = [MyPoint(self.__x, self.__y)
+    def __init__(self, points):
+        self.__points = points
+
+    def __str__(self):
+        out_string = ""
+        for i in range(0, len(self.__points)):
+            out_string += str(self.__points[i])
+        return out_string
+
+    def get_distance(self, other_point):
+        diff_x = other_point.__x - self.__x
+        diff_y = other_point.__y - self.__y
+        x_sq = diff_x * diff_x
+        y_sq = diff_y * diff_y
+        distance = math.sqrt(x_sq + y_sq)
+        return distance
+ 
+    def get_length(self):
+        dist = 0
+        for i in range(1, len(self.__points)):
+            dist_t = self.__points[i-1].get_distance(self.__points[i])
+            dist += dist_t
+        return dist
+
+def main():
+    p1 = MyPoint()
+    p2 = MyPoint(10, 20)
+    p3 = MyPoint(20, 30)
+    line1 = MyMultiLine([p1, p2, p3])
+    print('The total length is {:.2f}.'.format(line1.get_length()))
+
+main()
