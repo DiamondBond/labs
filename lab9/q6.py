@@ -96,10 +96,24 @@ class MyLine(MyPoint):
     def get_start_point(self):
         return self.__start_point
 
+    def get_length(self):
+        diff_x = self.__x1 - self.__x2
+        diff_y = self.__y1 - self.__y2
+        x_sq = diff_x * diff_x
+        y_sq = diff_y * diff_y
+        distance = math.sqrt(x_sq + y_sq)
+        return distance
+
+class MyCircle(MyPoint):
+    def __init__(self, centre_point = (0, 0], radius = 1):
+        self.__centre_point = centre_point
+        self.__radius = radius
+
+    def __str__(self):
+        return "Circle at " + str(self.__centre_point) + ", radius = " + str(self.__radius)
 
 def main():
-    line1 = MyLine(10, 20, 20, 30)
-    print(line1.get_start_point())
-    print(line1.get_end_point())
+    c1 = MyCircle(10, 20, 5)
+    print(c1)
 
 main()

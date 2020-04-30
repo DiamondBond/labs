@@ -56,12 +56,14 @@ class MyLine(MyPoint):
         self.__y1 = y1
         self.__x2 = x2
         self.__y2 = y2
+        self.__start_point = []
+        self.__end_point = []
 
     def __str__(self):
         return "(" + str(self.__x1) + ", " + str(self.__y1) + ") to (" + str(self.__x2) + ", " + str(self.__y2) + ")"
 
 def main():
-    line1 = MyLine(x1=20, y1=30)
+    line1 = MyLine(10, 20, 20, 30)
     print(line1)
 
 main()

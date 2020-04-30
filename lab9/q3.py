@@ -51,8 +51,10 @@ class MyPoint(object):
             return False
 
 def main():
-    p = MyPoint()
-    r = MyPoint(3,4)
+    #jp = MyPoint()
+    #r = MyPoint(3,4)
+    p = MyPoint(10,20)
+    r = MyPoint(30,40)
     print("The distance between two points is {:.2f}.".format(p.get_distance(r)))
     print(p.is_near_by(r))
 
