@@ -1,0 +1,16 @@
+Ackermann(m, n) 
+   {next and goal are arrays indexed from 0 to m, initialized so that next[O] 
+    through next[m] are 0, goal[O] through goal[m - l] are 1, and goal[m] is -1} 
+repeat
+    value <-- next[O] + 1 
+    transferring <-- true 
+    current <-- O 
+    while transferring do begin
+       if next[current] = goal[current] then goal[current] <-- value
+                                            else transferring <-- false
+       next[current] <-- next[current]+l
+       current <-- current + 1 
+       end while
+until next[m] = n + 1 
+return value {the value of A(m, n)}
+end Ackermann 
