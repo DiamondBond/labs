@@ -15,7 +15,7 @@ void do_primes()
         if (i == num)
             ++primes;
     }
-    printf("Calculated %d primes.\n", primes);
+    //printf("Calculated %d primes.\n", primes);
 }
 
 int main(int argc, char ** argv)

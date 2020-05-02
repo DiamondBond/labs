@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import math
 
 class MyPoint(object):
@@ -170,15 +169,16 @@ class MyMultiLine(MyPoint):
     def get_length(self):
         dist = 0
         for i in range(1, len(self.__points)):
-            dist_t = self.__points[i-1].get_distance(self.__points[i])
-            dist += dist_t
+            temp = self.__points[i-1].get_distance(self.__points[i])
+            dist += temp
         return dist
 
 def main():
     p1 = MyPoint()
     p2 = MyPoint(10, 20)
     p3 = MyPoint(20, 30)
-    line1 = MyMultiLine([p1, p2, p3])
+    p4 = MyPoint(30, 40)
+    line1 = MyMultiLine([p1, p2, p3, p4])
     print('The total length is {:.2f}.'.format(line1.get_length()))
 
 main()

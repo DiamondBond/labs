@@ -11,3 +11,6 @@ primes:
 
 fb:
 	gcc fizzbuzz.c -o fb.o
+
+mc:
+	gcc p.c -o mc.o
