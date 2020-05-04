@@ -1,15 +1,22 @@
 #include <stdio.h>
- 
-int ack(int m, int n){
-        if (!m) return n + 1;
-        if (!n) return ack(m - 1, 1);
-        return ack(m - 1, ack(m, n - 1));
+int ack(m,n)
+int m,n;
+
+{
+    int ans;
+    if (m == 0) ans = n+1;
+    else if (n == 0) ans = ack(m-1,1);
+    else ans = ack(m-1, ack(m,n-1));
+    return (ans);
 }
- 
-int main(){
-        int m, n;
-        for (m = 0; m <= 4; m++)
-                for (n = 0; n < 6 - m; n++)
-                        printf("A(%d, %d) = %d\n", m, n, ack(m, n));
-        return 0;
+
+int main (argc, argv)
+int argc; char ** argv;
+
+{
+    int i,j;
+    for (i = 0; i<6; i++)
+    for (j = 0; j<6; j++)
+
+    printf ("ackerman (%d, %d) is: %d\n",i,j, ack(i,j));
 }
