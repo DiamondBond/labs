@@ -1,5 +1,6 @@
 clean:
 	rm -f *.o
+	rm -f *.out
 
 ack:
 	gcc ack.c -o ack.o
