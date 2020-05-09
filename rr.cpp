@@ -1,25 +1,4 @@
-// [header]
-// A very basic raytracer example.
-// [/header]
-// [compile]
 // c++ -o raytracer -O3 -Wall raytracer.cpp
-// [/compile]
-// [ignore]
-// Copyright (C) 2012  www.scratchapixel.com
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
-// [/ignore]
 #include <cstdlib>
 #include <cstdio>
 #include <cmath>
@@ -29,9 +8,9 @@
 #include <cassert>
 
 #if defined __linux__ || defined __APPLE__
-// "Compiled for Linux
+// Linux
 #else
-// Windows doesn't define these values by default, Linux does
+// Windows
 #define M_PI 3.141592653589793
 #define INFINITY 1e8
 #endif
@@ -89,9 +68,7 @@ public:
         center(c), radius(r), radius2(r * r), surfaceColor(sc), emissionColor(ec),
         transparency(transp), reflection(refl)
     { /* empty */ }
-    //[comment]
     // Compute a ray-sphere intersection using the geometric solution
-    //[/comment]
     bool intersect(const Vec3f &rayorig, const Vec3f &raydir, float &t0, float &t1) const
     {
         Vec3f l = center - rayorig;
@@ -107,17 +84,14 @@ public:
     }
 };
 
-//[comment]
 // This variable controls the maximum recursion depth
-//[/comment]
-#define MAX_RAY_DEPTH 5
+#define MAX_RAY_DEPTH 5 // default = 5
 
 float mix(const float &a, const float &b, const float &mix)
 {
     return b * mix + a * (1 - mix);
 }
 
-//[comment]
 // This is the main trace function. It takes a ray as argument (defined by its origin
 // and direction). We test if this ray intersects any of the geometry in the scene.
 // If the ray intersects an object, we compute the intersection point, the normal
@@ -126,7 +100,6 @@ float mix(const float &a, const float &b, const float &mix)
 // The function returns a color for the ray. If the ray intersects an object that
 // is the color of the object at the intersection point, otherwise it returns
 // the background color.
-//[/comment]
 Vec3f trace(
     const Vec3f &rayorig,
     const Vec3f &raydir,
@@ -188,7 +161,7 @@ Vec3f trace(
         // it's a diffuse object, no need to raytrace any further
         for (unsigned i = 0; i < spheres.size(); ++i) {
             if (spheres[i].emissionColor.x > 0) {
-                // this is a light
+                // let there be light
                 Vec3f transmission = 1;
                 Vec3f lightDirection = spheres[i].center - phit;
                 lightDirection.normalize();
@@ -210,11 +183,9 @@ Vec3f trace(
     return surfaceColor + sphere->emissionColor;
 }
 
-//[comment]
 // Main rendering function. We compute a camera ray for each pixel of the image
 // trace it and return a color. If the ray hits a sphere, we return the color of the
 // sphere at the intersection point, else we return the background color.
-//[/comment]
 void render(const std::vector<Sphere> &spheres)
 {
     unsigned width = 640, height = 480;
@@ -233,7 +204,7 @@ void render(const std::vector<Sphere> &spheres)
         }
     }
     // Save result to a PPM image (keep these flags if you compile under Windows)
-    std::ofstream ofs("./untitled.ppm", std::ios::out | std::ios::binary);
+    std::ofstream ofs("./output/raytrace.ppm", std::ios::out | std::ios::binary);
     ofs << "P6\n" << width << " " << height << "\n255\n";
     for (unsigned i = 0; i < width * height; ++i) {
         ofs << (unsigned char)(std::min(float(1), image[i].x) * 255) <<
@@ -244,11 +215,9 @@ void render(const std::vector<Sphere> &spheres)
     delete [] image;
 }
 
-//[comment]
 // In the main function, we will create the scene which is composed of 5 spheres
 // and 1 light (which is also a sphere). Then, once the scene description is complete
 // we render that scene, by calling the render() function.
-//[/comment]
 int main(int argc, char **argv)
 {
     srand48(13);
