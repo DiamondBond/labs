@@ -1,4 +1,3 @@
-// Using CUDA device to calculate pi
 #include <stdio.h>
 #include <math.h>
 #define PI acos(-1.0)
