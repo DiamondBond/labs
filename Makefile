@@ -15,3 +15,7 @@ fb:
 
 mc:
 	gcc p.c -o mc.o
+
+pi:
+	gcc pi_800.c -o pi_800.o
+	gcc pi.c -o pi.o
