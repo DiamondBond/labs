@@ -19,6 +19,3 @@ mc:
 pi:
 	gcc pi_800.c -o pi_800.o
 	gcc pi.c -o pi.o
-
-raytracer:
-	c++ -o raytracer.o -O3 -Wall rr.cpp
