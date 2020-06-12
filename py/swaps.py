@@ -58,6 +58,3 @@ def minSwaps(arr):
 # Driver Code      
 arr = [1, 5, 4, 3, 2] 
 print(minSwaps(arr)) 
-  
-# This code is contributed 
-# by Dharan Aditya 
