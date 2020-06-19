@@ -12,5 +12,5 @@ for n in range(1,10000):
     if a%1==0:
         a = int(a)
         ans.append((a, n))
-        #print(ans)
-print(ans)
+        print(ans)
+#print(ans)
