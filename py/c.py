@@ -174,7 +174,7 @@ class MyMultiLine(MyPoint):
         return dist
 
 def main():
-    p1 = MyPoint()
+    p1 = MyPoint(0, 10)
     p2 = MyPoint(10, 20)
     p3 = MyPoint(20, 30)
     p4 = MyPoint(30, 40)

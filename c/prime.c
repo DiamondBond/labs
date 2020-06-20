@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 
-void main() {
+int main (void) {
     clock_t start, end;
     double runTime;
     start = clock();
@@ -17,12 +17,12 @@ void main() {
         if (i == num)
             primes++;
 
-        system("clear");
+        //system("clear");
         printf("%d prime numbers calculated\n",primes);
         num++;
     }
 
     end = clock();
     runTime = (end - start) / (double) CLOCKS_PER_SEC;
-    printf("This machine calculated all %d prime numbers under 1000 in %g seconds\n", primes, runTime);
+    printf("This machine calculated all %d prime numbers in under 1000 in %g seconds\n", primes, runTime);
 }
