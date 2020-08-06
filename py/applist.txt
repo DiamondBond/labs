@@ -1,0 +1,1 @@
+/usr/share/applications/dosbox.desktop,/usr/share/applications/emacs.desktop,
